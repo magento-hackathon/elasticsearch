@@ -407,6 +407,7 @@ class Magehack_Elasticsearch_Helper_Data extends Mage_Core_Helper_Abstract
 	 */
 	public function search($filters = array(), $facets = array(), $from = false, $limit = false, $sort = array())
 	{
+        /** @var $api Magehack_Elasticsearch_Model_Api_Elasticsearch */
 		$api = Mage::getModel('elasticsearch/api_elasticsearch');
 		// adding default filters
 		$defaultFilters = $this->getElasticsearchDefaultFilters();
@@ -427,7 +428,7 @@ class Magehack_Elasticsearch_Helper_Data extends Mage_Core_Helper_Abstract
 			$limit = $this->getSearchQueryLimit();
 		}
 		$wildcard = $this->getConfigHasWildcard('globals') ? '*' : '';
-		return $api->doSearch($this->getEqueryText() . $wildcard, $filters, $facets, $from, $limit, $sort);
+        return $api->doSearch($this->getEqueryText() . $wildcard, $filters, $facets, $from, $limit, $sort);
 	}
 
 	/**
@@ -590,7 +591,8 @@ class Magehack_Elasticsearch_Helper_Data extends Mage_Core_Helper_Abstract
 	 */
 	public function getEqueryPath()
 	{
-		return 'magehack/_search';
+        $path = Mage::getStoreConfig('elasticsearch/index/name',Mage::app()->getStore()->getId());
+		return $path.'/_search';
 	}
 
 }

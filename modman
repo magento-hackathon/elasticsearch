@@ -1,0 +1,9 @@
+/app/code/community/Magehack /app/code/community/Magehack
+/app/etc/modules/Magehack_Elasticsearch.xml /app/etc/modules/Magehack_Elasticsearch.xml
+/app/design/adminhtml/default/default/layout/elasticsearch.xml /app/design/adminhtml/default/default/layout/elasticsearch.xml
+/app/design/frontend/base/default/layout/elasticsearch.xml /app/design/frontend/base/default/layout/elasticsearch.xml
+/app/design/frontend/base/default/template/elasticsearch/* /app/design/frontend/base/default/template/elasticsearch
+/js/magehack/* /js/magehack
+/skin/frontend/base/default/css/vpager.css /skin/frontend/base/default/css/vpager.css
+/skin/frontend/base/default/js/vpager.js /skin/frontend/base/default/js/vpager.js
+/lib/Elastica /lib/Elastica
