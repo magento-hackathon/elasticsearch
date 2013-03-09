@@ -121,7 +121,7 @@ class Magehack_Elasticsearch_Model_Feed_Product extends Magehack_Elasticsearch_M
 		}
 
 		// Inject stock info
-		$data['store_id'] = $product->getStockItem()->getData('store_id');
+		$data['store_id'] = $product->getStoreIds();
 		//$data['website_id'] = Mage::app()->getStore()->getWebsiteId();
 		$data['stock_qty'] = (int) $product->getStockItem()->getData('qty');
 		$data['url'] = $product->getProductUrl();
